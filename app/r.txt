@@ -1,0 +1,55 @@
+import React from 'react';
+import { getFrameMetadata } from 'farcaster-api';
+
+const frameMetadata = getFrameMetadata({
+  buttons: [
+    {
+      action: 'Link',
+      label: 'Start Layer3 Quest',
+      target: 'https://app.layer3.xyz/campaigns/uniswap-extension-campaign?slug=uniswap-extension-campaign',
+    },
+    {
+      action: 'Link',
+      label: 'Learn about the Extension',
+      target: 'https://wallet.uniswap.org/extension',
+    },
+    {
+      action: 'Link',
+      label: 'Download the Extension',
+      target: 'https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg?hl=en-US',
+    },
+  ],
+  image: HARD_CODED_URL + 'screenshot.png',
+});
+
+export const metadata: Metadata = {
+  title: 'Uniswap Extension',
+  description: 'Download the Uniswap Extension and Learn More',
+  openGraph: {
+    title: 'Uniswap Extension',
+    description: 'Download the Uniswap Extension and Learn More',
+    images: [HARD_CODED_URL + 'screenshot.png'],
+  },
+  other: {
+    ...frameMetadata,
+  },
+};
+
+export default function Page() {
+  return (
+    <>
+      <head>
+        <meta name="fc:frame:button:1" content="Start Layer3 Quest" />
+        <meta name="fc:frame:button:1:action" content="link" />
+        <meta name="fc:frame:button:1:target" content="https://app.layer3.xyz/campaigns/uniswap-extension-campaign?slug=uniswap-extension-campaign" />
+        <meta name="fc:frame:button:2" content="Learn about the Extension" />
+        <meta name="fc:frame:button:2:action" content="link" />
+        <meta name="fc:frame:button:2:target" content="https://wallet.uniswap.org/extension" />
+        <meta name="fc:frame:button:3" content="Download the Extension" />
+        <meta name="fc:frame:button:3:action" content="link" />
+        <meta name="fc:frame:button:3:target" content="https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg?hl=en-US" />
+      </head>
+      <h1>Uniswap Extension</h1>
+    </>
+  );
+}

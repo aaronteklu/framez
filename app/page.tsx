@@ -1,6 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit/frame';
 import type { Metadata } from 'next';
-const HARDCODED_URL = 'https://framez-pearl.vercel.app/'
+const HARDCODED_URL = 'https://framez-pearl.vercel.app/';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -34,7 +34,20 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
+      <head>
+        <meta name="fc:frame:button:1" content="Download Extension" />
+        <meta name="fc:frame:button:1:action" content="link" />
+        <meta name="fc:frame:button:1:target" content="https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg" />
+        <meta name="fc:frame:button:2" content="Learn More" />
+        <meta name="fc:frame:button:2:action" content="link" />
+        <meta name="fc:frame:button:2:target" content="https://blog.uniswap.org/uniswap-extension-is-now-available-for-everyone" />
+      </head>
       <h1>Uniswap Extension</h1>
+      <img 
+        src={`${HARDCODED_URL}screenshot.png`} 
+        alt="Uniswap Extension" 
+        style={{ width: '100%', height: 'auto', aspectRatio: '1.91/1' }} 
+      />
     </>
   );
 }
