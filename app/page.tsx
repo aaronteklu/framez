@@ -1,6 +1,6 @@
 import { getFrameMetadata } from '@coinbase/onchainkit/frame';
 import type { Metadata } from 'next';
-const HARDCODED_URL = 'https://pls-lgtx.vercel.app/'
+const HARDCODED_URL = 'https://framez-pearl.vercel.app/'
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -12,7 +12,7 @@ const frameMetadata = getFrameMetadata({
     {
       action: 'link',
       label: 'Learn More',
-      target: 'https://uniswap.org'
+      target: 'https://blog.uniswap.org/uniswap-extension-is-now-available-for-everyone'
     },
   ],
   image: HARDCODED_URL + 'screenshot.png',
